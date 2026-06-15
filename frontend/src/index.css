@@ -1,0 +1,149 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #F0F4FF;
+  color: #333;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+@keyframes slide {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+@media (max-width: 768px) {
+  nav .desktop-links {
+    display: none !important;
+  }
+}
+@media (max-width: 768px) {
+  [data-hamburger] {
+    display: block !important;
+  }
+  [data-links] {
+    display: none !important;
+  }
+}
+@media (max-width: 768px) {
+  .desktop-nav-links {
+    display: none !important;
+  }
+  .hamburger-btn {
+    display: block !important;
+  }
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #F0F4FF;
+  color: #333;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+@keyframes slide {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+@media (max-width: 768px) {
+
+  /* Fix hero padding */
+  .hero-section {
+    padding: 40px 20px !important;
+    min-height: 70vh !important;
+  }
+
+  /* Fix all grids to single column */
+  .services-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Fix doctor section */
+  .doctor-section {
+    flex-direction: column !important;
+    padding: 40px 20px !important;
+  }
+
+  /* Fix form rows */
+  .form-row {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Fix stats bar */
+  .stats-bar {
+    grid-template-columns: 1fr 1fr !important;
+    padding: 30px 20px !important;
+  }
+
+  /* Fix stats divider */
+  .stat-divider {
+    display: none !important;
+  }
+
+  /* Fix footer */
+  .footer-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Fix why grid */
+  .why-grid {
+    grid-template-columns: 1fr 1fr !important;
+  }
+
+  /* Fix schedule grid */
+  .schedule-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+
+  /* Fix contact section */
+  .contact-section {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Fix service section */
+  .service-section {
+    flex-direction: column !important;
+    padding: 40px 20px !important;
+  }
+
+  /* Fix gallery grid */
+  .masonry-grid {
+    columns: 2 !important;
+  }
+
+  /* Fix hero title */
+  .hero-title {
+    font-size: 36px !important;
+  }
+
+  /* Fix hero buttons */
+  .hero-buttons {
+    flex-direction: column !important;
+    gap: 12px !important;
+  }
+  @keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+}
