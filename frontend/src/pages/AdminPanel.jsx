@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import useIsMobile from "../useIsMobile";
+const API_URL = import.meta.env.VITE_API_URL || "https://genec-hospital-api.onrender.com";
 
 const AdminPanel = () => {
   const isMobile = useIsMobile();
@@ -16,7 +17,7 @@ const AdminPanel = () => {
   const fetchAppointments = async () => {
     try {
       setLoading(true);
-      const res = await axios.get("http://localhost:5000/api/appointments");
+      const res = await axios.get(`${API_URL}/api/appointments`);
       setAppointments(res.data.data);
       setError(null);
     } catch (err) {
@@ -61,7 +62,7 @@ const AdminPanel = () => {
   const updateStatus = async (id, newStatus) => {
     setUpdatingId(id);
     try {
-      await axios.patch(`http://localhost:5000/api/appointments/${id}`, {
+      await axios.patch(`${API_URL}/api/appointments/${id}`, {
         status: newStatus,
       });
       setAppointments((prev) =>
