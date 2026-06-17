@@ -22,6 +22,7 @@ const About = () => {
       fontSize: isMobile ? "36px" : "48px",
       fontWeight: "700",
       marginBottom: "16px",
+      letterSpacing: "-0.5px",
     },
     headerSub: {
       color: "#A0B4D6",
@@ -49,6 +50,7 @@ const About = () => {
       fontWeight: "700",
       marginBottom: "24px",
       lineHeight: "1.3",
+      letterSpacing: "-0.3px",
     },
     sectionTitleDark: {
       color: "#FFFFFF",
@@ -56,6 +58,7 @@ const About = () => {
       fontWeight: "700",
       marginBottom: "48px",
       lineHeight: "1.3",
+      letterSpacing: "-0.3px",
     },
     storyText: {
       color: "#6B7280",
@@ -66,7 +69,7 @@ const About = () => {
     storyStats: {
       display: "grid",
       gridTemplateColumns: isMobile ? "1fr 1fr" : "repeat(4, 1fr)",
-      gap: "20px",
+      gap: isMobile ? "16px" : "20px",
       marginTop: "40px",
     },
     storyStat: {
@@ -75,6 +78,7 @@ const About = () => {
       padding: "20px",
       textAlign: "center",
       borderLeft: "4px solid #FF6B6B",
+      boxShadow: "0 4px 14px rgba(13, 27, 62, 0.08)",
     },
     storyStatNum: {
       color: "#0D1B3E",
@@ -108,6 +112,7 @@ const About = () => {
       alignItems: "center",
       justifyContent: "center",
       border: "6px solid #FF6B6B",
+      boxShadow: "0 12px 28px rgba(13, 27, 62, 0.25)",
     },
     doctorAvatarText: {
       color: "#FF6B6B",
@@ -116,6 +121,7 @@ const About = () => {
     },
     doctorRight: {
       flex: 1,
+      textAlign: isMobile ? "center" : "left",
     },
     doctorName: {
       color: "#0D1B3E",
@@ -140,19 +146,21 @@ const About = () => {
       fontSize: "15px",
       lineHeight: "1.8",
       marginBottom: "12px",
+      textAlign: isMobile ? "center" : "left",
     },
     doctorTags: {
       display: "flex",
       flexWrap: "wrap",
       gap: "10px",
       marginTop: "20px",
+      justifyContent: isMobile ? "center" : "flex-start",
     },
     tag: {
       backgroundColor: "#0D1B3E",
       color: "#FFFFFF",
-      padding: "6px 16px",
+      padding: isMobile ? "6px 14px" : "6px 16px",
       borderRadius: "50px",
-      fontSize: "13px",
+      fontSize: isMobile ? "12.5px" : "13px",
       fontWeight: "500",
     },
     whyUs: {
@@ -163,18 +171,28 @@ const About = () => {
     whyGrid: {
       display: "grid",
       gridTemplateColumns: isMobile ? "1fr 1fr" : "repeat(4, 1fr)",
-      gap: "24px",
+      gap: isMobile ? "16px" : "24px",
       maxWidth: "1100px",
       margin: "0 auto",
     },
     whyCard: {
       backgroundColor: "#1A2F5A",
       borderRadius: "16px",
-      padding: isMobile ? "20px 12px" : "32px 20px",
+      padding: isMobile ? "24px 14px" : "32px 20px",
+      boxShadow: "0 8px 20px rgba(0, 0, 0, 0.18)",
+    },
+    whyIconWrap: {
+      width: isMobile ? "48px" : "56px",
+      height: isMobile ? "48px" : "56px",
+      borderRadius: "50%",
+      backgroundColor: "rgba(255, 107, 107, 0.15)",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      margin: "0 auto 16px",
     },
     whyIcon: {
-      fontSize: "40px",
-      marginBottom: "16px",
+      fontSize: isMobile ? "24px" : "28px",
     },
     whyTitle: {
       color: "#FFFFFF",
@@ -276,7 +294,9 @@ const About = () => {
         <div style={styles.whyGrid}>
           {whyData.map((item, index) => (
             <div key={index} style={styles.whyCard}>
-              <div style={styles.whyIcon}>{item.icon}</div>
+              <div style={styles.whyIconWrap}>
+                <div style={styles.whyIcon}>{item.icon}</div>
+              </div>
               <h3 style={styles.whyTitle}>{item.title}</h3>
               <p style={styles.whyText}>{item.desc}</p>
             </div>
