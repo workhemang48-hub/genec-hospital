@@ -25,9 +25,10 @@ const AppContent = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, [location.pathname]);
 
-  return (
-    <>
-      {!isAdmin && <Navbar />}
+return (
+  <>
+    {!isAdmin && <Navbar />}
+    <div key={location.pathname} className="page-transition">
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
@@ -36,14 +37,15 @@ const AppContent = () => {
         <Route path="/contact" element={<Contact />} />
         <Route path="/admin" element={<AdminPanel />} />
       </Routes>
-      {!isAdmin && <Footer />}
-      {!isAdmin && (
-        <a href="https://wa.me/919990999089" target="_blank" rel="noopener noreferrer" style={styles.whatsapp}>
-          <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" style={styles.whatsappIcon} />
-        </a>
-      )}
-    </>
-  );
+    </div>
+    {!isAdmin && <Footer />}
+    {!isAdmin && (
+      <a href="https://wa.me/919990999089" target="_blank" rel="noopener noreferrer" style={styles.whatsapp}>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" style={styles.whatsappIcon} />
+      </a>
+    )}
+  </>
+);
 };
 
 const styles = {
