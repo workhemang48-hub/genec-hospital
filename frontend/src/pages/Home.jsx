@@ -1,6 +1,7 @@
 import useIsMobile from "../useIsMobile";
 import { useEffect, useRef, useState } from "react";
 import axios from "axios";
+const API_URL = import.meta.env.VITE_API_URL || "https://genec-hospital-api.onrender.com";
 
 const Home = () => {
   const isMobile = useIsMobile();
@@ -46,7 +47,7 @@ const Home = () => {
       return;
     }
     try {
-      await axios.post("http://localhost:5000/api/appointments", formData);
+      await axios.post(`${API_URL}/api/appointments`, formData);
       setSubmitted(true);
       setErrors({});
       setFormData({
